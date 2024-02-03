@@ -7,77 +7,71 @@ internal class Toast { }
 
 public static class Program
 {
-    public static void Main(string[] args)
+    public static async Task Main(string[] args)
     {
-        Coffee cup = PourCoffee();
-        Console.WriteLine("coffee is ready");
-        Egg eggs = FryEggs(2);
-        Console.WriteLine("eggs are ready");
-        Bacon bacon = FryBacon(3);
-        Console.WriteLine("bacon is ready");
-        Toast toast = ToastBread(2);
-        ApplyButter(toast);
-        ApplyJam(toast);
-        Console.WriteLine("toast is ready");
-        Juice oj = PourJuice();
-        Console.WriteLine("oj is ready");
-        Console.WriteLine("Breakfast is ready!");
+        // await BenchMark();
+        
+        // ineffective use of asynchronous functions
+        // because this code will be executed like synchronous
+        // await Do1Async(ConsoleColor.Red);
+        // await Do2Async(ConsoleColor.Green);
+
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine("2. -------------------------");
+        // Performant way of using asynchronous functions
+        var do1Task = Do1Async(ConsoleColor.Red);
+        var do2Task = Do2Async(ConsoleColor.Green);
+        await do1Task;
+        await do2Task;
+        
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine("-------------------------");
+        // Performant way of using asynchronous functions
+        var do1Task1 = Do1Async(ConsoleColor.Red);
+        var do2Task1 = Do2Async(ConsoleColor.Green);
+        await Task.WhenAll(do1Task1, do2Task1);
     }
 
-    private static Juice PourJuice()
+    private static async Task BenchMark()
     {
-        Console.WriteLine("Pouring juice...");
-        return new ();
-    }
-    private static void ApplyJam(Toast toast)
-    {
-        Console.WriteLine("Applying jam on the toast...");
-    }
-    private static void ApplyButter(Toast toast)
-    {
-        Console.WriteLine("Applying butter on the toast...");
-    }
-    private static Toast ToastBread(int slices)
-    {
-        for (int slice = 0; slice < slices; slice++)
-        {
-            Console.WriteLine("Putting a slice of bread in the toaster");
-        }
+        // var startSync = DateTime.UtcNow;
+        // Synchronous.Start();
+        // var endSync = DateTime.UtcNow;
+        //
+        // var startIA = DateTime.UtcNow;
+        // await IneffectiveUseOfAsynchronousProgramming.StartAsync();
+        // var endIA = DateTime.UtcNow;
+        
+        var startA = DateTime.UtcNow;
+        await EffectiveAsynchronous.StartAsync();
+        var endA = DateTime.UtcNow;
 
-        Console.WriteLine("Start toasting...");
-        Task.Delay(3_000);
-        Console.WriteLine("Remove toast from toaster");
-
-        return new Toast();
+        // Console.WriteLine($"Synchronous: {(endSync - startSync).TotalMilliseconds}");
+        // Console.WriteLine($"Ineffective asynchronous: {(endIA - startIA).TotalMilliseconds}");
+        Console.WriteLine($"Effective asynchronous: {(endA - startA).TotalMilliseconds}");
     }
-    private static Bacon FryBacon(int slices)
+    private static async Task Do1Async(ConsoleColor color)
     {
-        Console.WriteLine($"putting {slices} slices of bacon in the pan");
-        Console.WriteLine("cooking first side of bacon...");
-        Task.Delay(3000).Wait();
-        for (int slice = 0; slice < slices; slice++)
-        {
-            Console.WriteLine("flipping a slice of bacon");
-        }
-        Console.WriteLine("cooking the second side of bacon...");
-        Task.Delay(3000).Wait();
-        Console.WriteLine("Put bacon on plate");
-
-        return new Bacon();
+        Console.ForegroundColor = color;
+        Console.WriteLine("Do1: [action 1]");
+        await Task.Delay(1_000);
+        Console.ForegroundColor = color;
+        Console.WriteLine("Do1: [action 2]");
+        Console.ForegroundColor = color;
+        Console.WriteLine("Do1: [action 3]");
+        await Task.Delay(3_000);
+        Console.ForegroundColor = color;
+        Console.WriteLine("Do1: [action 4]");
+        
     }
-    private static Egg FryEggs(int howMany)
+    private static async Task Do2Async(ConsoleColor color)
     {
-        Console.WriteLine("Warming the egg pan...");
-        Task.Delay(3000).Wait();
-        Console.WriteLine($"cracking {howMany} eggs");
-        Console.WriteLine("cooking the eggs ...");
-        Task.Delay(3000).Wait();
-        Console.WriteLine("Put eggs on plate");
-        return new Egg();
-    }
-    private static Coffee PourCoffee()
-    {
-        Console.WriteLine("Pouring coffee");
-        return new Coffee();
+        Console.ForegroundColor = color;
+        Console.WriteLine("Do2: [action 1]");
+        Console.ForegroundColor = color;
+        Console.WriteLine("Do2: [action 2]");
+        await Task.Delay(2_000);
+        Console.ForegroundColor = color;
+        Console.WriteLine("Do2: [action 3]");
     }
 }
