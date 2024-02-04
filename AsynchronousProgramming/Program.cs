@@ -7,7 +7,24 @@ internal class Toast { }
 
 public static class Program
 {
-    public static async Task Main(string[] args)
+    public static async Task Main()
+    {
+        await foreach (int number in GetYearsAsync(4))
+        {
+            Console.WriteLine(number);
+        }
+    }
+
+    public static async IAsyncEnumerable<int> GetYearsAsync(int count)
+    {
+        var number = new Random();
+        for (int i = 0; i < count; i++)
+        {
+            yield return number.Next(1, 100);
+            await Task.Delay(500);
+        }
+    }
+    public static async Task CompareAllPlayGround()
     {
         // await BenchMark();
         
