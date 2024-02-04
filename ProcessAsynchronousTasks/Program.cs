@@ -54,7 +54,10 @@ class Program
     {
         var response = await client.GetAsync(url);
         var repsonseStream = await response.Content.ReadAsStreamAsync();
-        return (int)repsonseStream.Length;
+        int len = (int)repsonseStream.Length;
+        Console.WriteLine($"Size: {url,-60} {len,10:##,###}");
+
+        return len;
     }
 
     static readonly HttpClient SClient = new HttpClient
