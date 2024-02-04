@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFGetStarted", "EFGetStarte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IronPDF", "IronPDF\IronPDF.csproj", "{8FF616B0-2AF5-408A-A104-313681293F41}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessAsynchronousTasks", "ProcessAsynchronousTasks\ProcessAsynchronousTasks.csproj", "{339EF485-5BAA-4519-94E3-B01D6632781C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{8FF616B0-2AF5-408A-A104-313681293F41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FF616B0-2AF5-408A-A104-313681293F41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FF616B0-2AF5-408A-A104-313681293F41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{339EF485-5BAA-4519-94E3-B01D6632781C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{339EF485-5BAA-4519-94E3-B01D6632781C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{339EF485-5BAA-4519-94E3-B01D6632781C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{339EF485-5BAA-4519-94E3-B01D6632781C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
