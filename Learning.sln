@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IronPDF", "IronPDF\IronPDF.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessAsynchronousTasks", "ProcessAsynchronousTasks\ProcessAsynchronousTasks.csproj", "{339EF485-5BAA-4519-94E3-B01D6632781C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsynchronousFileAccess", "AsynchronousFileAccess\AsynchronousFileAccess.csproj", "{F799E20A-120B-4616-9BEB-3F544741BD9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CancellingTasks", "CancellingTasks\CancellingTasks.csproj", "{E3FBF5D9-990E-4105-A927-5B7AB566984D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +40,13 @@ Global
 		{339EF485-5BAA-4519-94E3-B01D6632781C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{339EF485-5BAA-4519-94E3-B01D6632781C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{339EF485-5BAA-4519-94E3-B01D6632781C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F799E20A-120B-4616-9BEB-3F544741BD9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F799E20A-120B-4616-9BEB-3F544741BD9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F799E20A-120B-4616-9BEB-3F544741BD9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F799E20A-120B-4616-9BEB-3F544741BD9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3FBF5D9-990E-4105-A927-5B7AB566984D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3FBF5D9-990E-4105-A927-5B7AB566984D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3FBF5D9-990E-4105-A927-5B7AB566984D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3FBF5D9-990E-4105-A927-5B7AB566984D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
